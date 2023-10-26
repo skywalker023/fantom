@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Introduces a new benchmark for machine theory of mind in interactions.">
+  <meta name="keywords" content="Theory of Mind, ToM, Benchmark, LLM, Language Model, Interactions">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FANToM: A New Benchmark for Machine ToM in Interactions</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://hyunw.kim">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <!-- <a class="navbar-item" href="https://confaide.github.io">
+            ConfAIde
+          </a> -->
+          <a class="navbar-item" href="https://hyunw.kim/sodaverse">
+            SODA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><b>FANToM:</b> A Benchmark for Stress-testing Machine Theory of Mind in Interactions</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://hyunw.kim">Hyunwoo Kim</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://msclar.github.io/">Melanie Sclar</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://xuhuiz.com/">Xuhui Zhou</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rlebras.github.io/">Ronan Le Bras</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://vision.snu.ac.kr/gunhee/">Gunhee Kim</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~yejin/">Yejin Choi</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://maartensap.com/">Maarten Sap</a><sup>1,3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Allen Institute for AI,</span>
+            <span class="author-block"><sup>2</sup>University of Washington,</span>
+            <span class="author-block"><sup>3</sup>Carnegie Mellon University,</span>
+            <span class="author-block"><sup>4</sup>Seoul National University</span>
+          </div>
+
+          <!--Centered Image Start-->
+          <div style="text-align: center;">
+            <img src="./static/images/ghost.jpeg" alt="" style="width:60%;height:60%;" class="center">
+            <figcaption style="font-size: small;">Image credit: <a href="https://www.bing.com/create">Bing Image Creator</a></figcaption>
+          </figure>          </div>
+          <!--Centered Image End-->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2310.15421.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.15421"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/skywalker023/fantom"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code and Data</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/skywalker023/fantom"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Theory of mind (ToM) evaluations currently focus on testing models using passive narratives that inherently lack interactivity.
+            We introduce FANToM 👻, a new benchmark designed to stress-test ToM within information-asymmetric conversational contexts via question answering.
+            Our benchmark draws upon important theoretical requisites from psychology and necessary empirical considerations when evaluating large language models (LLMs).
+            In particular, we formulate multiple types of questions that demand the same underlying reasoning to identify <i>illusory</i> or false sense of ToM capabilities in LLMs.
+            We show that FANToM is challenging for state-of-the-art LLMs, which perform significantly worse than humans even with chain-of-thought reasoning or fine-tuning.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+    <!-- Benchmark design. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Benchmark Design</h2>
+        <div>
+          <img src="./static/images/fig.png" alt="" style="width:100%;height:100%;" class="center">
+          <figcaption style="font-size: large;">An example of FANToM's question-answer set.</figcaption>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <br>
+            We construct FANToM by leveraging information-asymmetry in conversational contexts.
+            It consists of multi-party conversations centered around a certain topic (e.g., pets, family).
+            As the conversation progresses, characters join and leave the discussion and the conversation's subtopic changes over time.
+            Initially, the conversation begins with two or three characters.
+            As the conversation progresses, characters join and leave the discussion and the conversation's subtopic changes over time.
+            During the absence of a character, the conversation continues and information is shared among the remaining participants, creating a natural information asymmetry that reflects real-life interactions.
+            After a series of utterances, the character who was absent (re)joins the conversation, unaware of the information that was previously shared with other participants.<br><br>
+
+            On top of this asymmetry, we build fact questions and convert them to multiple challenging belief questions: (1) BeliefQ (choice and free-response types), (2) AnswerabilityQ (list and binary types), and (3) InfoAccessQ (list and binary types).
+            All of these questions require the same underlying theory of mind (ToM) reasoning: "<i>Who is aware of the information in the conversation.</i>"
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Benchmark design. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Results. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Main result. -->
+        <h3 class="title is-4">LLMs do not have a coherent theory of mind</h3>
+        <div class="content has-text-justified">
+          <p>
+            All SOTA LLMs exhibit scores that are significantly worse than human performance.
+            We find models perform significantly better on BeliefQ[Choice] compared to AnswerabilityQ[List] and InfoAccessQ[List]. Despite the AnswerabilityQ[List] and InfoAccessQ[List] being prerequisites for solving BeliefQ[Choice], they are much more challenging for models.
+            Furthermore, models' performance sharply drops when evaluated for coherent reasoning across multiple question types with the same underlying theory of mind (ToM) reasoning (i.e., All Question Types).
+            These findings suggest that some instances of successful LLM ToM reasoning should be interpreted as <i>illusory</i>.
+          </p>
+        </div>
+        <div class="columns is-full-width">
+          <div class="column has-text-centered">
+            <img src="./static/images/scores_barchart.png"
+                 alt="Barchart for comparing LLMs with human performance"/>
+          </div>
+        </div>
+        <br/>
+        <!--/ Main result. -->
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <!-- Belief Qs. -->
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">LLMs are tricked <br>by their own use of shortcuts</h3>
+            <p>
+              The token F1 scores for FactQ shows the model's basic comprehension capability for interactions. 
+              Scoring high in FactQ indicates the model is good at identifying the most relevant information piece to answering the question.
+
+              Meanwhile, we deliberately design the incorrect answers in BeliefQ[Dist.] to have greater word overlap with the context than correct answers.
+              Also, BeliefQ[Dist.] and FactQ share significant word overlap.
+              Thus, if the model mindlessly copies the most relevant information piece to answering the belief question as well, it will be scoring low accuracy.
+            </p>
+            <img src="./static/images/factq_beliefq.png"
+                 alt="Barchart comparing the performance on fact questions and belief questions"/>
+        </div>
+      </div>
+      <!--/ Belief Qs. -->
+
+      <!-- CoT and FT. -->
+      <div class="column">
+        <h3 class="title is-4">Chain-of-thought and straight-forward fine-tuning is not enough</h3>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              We observe an improvement in scores with zero-shot chain-of-thought (CoT) applied. However, there are still significant score gaps compared to human performance.
+              Our benchmark is not intended for training purposes, but we also fine-tune (FT) Flan-T5 XL on FANToM to see how much it gains performance. Although the model shows a significant improvement in individual question types, it does not exhibit coherent ToM reasoning.
+            </p>
+            <img src="./static/images/cot_ft.png"
+                 alt="Model performance when applying chain-of-thought reasoning or fine-tuning"/>
+          </div>
+        </div>
+      </div>
+      <!--/ CoT and FT. -->
+    </div>
+
+    <!-- Error analysis. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <br><br>
+        <h3 class="title is-4">Even the errors they make are inconsistent</h3>
+        <div class="content has-text-justified">
+          <p>
+            We analyze the error types of AnswerabilityQ and InfoAccessQ for each model with and without chain-of-thought (CoT).<br>
+            
+            <b>(1)</b> For list-type questions, models make more errors by including characters who are unaware (i.e., false positive) of the information in the responses, rather than excluding characters who are aware (i.e., false negative).
+            Interestingly, when CoT is applied, the error of including unaware characters decreases, whereas the error of excluding characters who are aware increases for most models.
+
+            <b>(2)</b> In the case of binary questions, models tend to exhibit false negative responses more frequently for binary questions compared to list-type questions. 
+            <!-- If the model fails to generate a yes or no response, we mark it as irrelevant.  -->
+          </p>
+        </div>
+        <div class="content has-text-centered">
+            <img src="./static/images/error_analysis.png"
+                 alt="Model performance when applying chain-of-thought reasoning or fine-tuning"/>
+        </div>
+      </div>
+    <!--/ Error analysis. -->
+    </div>
+    <!--/ Results. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{kim2023fantom,
+    title={FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions},
+    author={Kim, Hyunwoo and Sclar, Melanie and Zhou, Xuhui and Le Bras, Ronan and Kim, Gunhee and Choi, Yejin and Sap, Maarten},
+    booktitle ={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+    year=2023
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2310.15421.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/skywalker023" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is borrowed from <a href="https://nerfies.github.io/">Nerfies</a> and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
