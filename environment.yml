@@ -1,0 +1,27 @@
+name: fantom
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - nvidia::cudatoolkit=11.7
+  - python=3.9.16
+  - pip=20.2.3
+  - pip:
+    - torch==2.1.1
+    - openai==0.27.6
+    - transformers==4.34.1
+    - tokenizers==0.14.1
+    - sentence-transformers==2.2.2
+    - sentencepiece==0.1.97
+    - colorful==0.5.5
+    - better-exceptions==0.3.3
+    - protobuf==3.20.3
+    - accelerate==0.23.0
+    - evaluate==0.4.0
+    - bitsandbytes==0.38.1
+    - together==0.2.8
+    - typing-extensions==4.8.0
+    # For linting
+    - pylint
+    - pycodestyle
+    - mypy
