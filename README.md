@@ -49,7 +49,9 @@ These are results on the `short` conversation inputs. Scores will be worse on th
 | Human              |      | 87.5 |       93.8       |                 |                  |        90.6        |          90.6         |                      |       90.6       |         90.6        |                    |                |
 | GPT-4-1106-preview |  0.0 |  0.2 |       51.9       |       20.3      |       33.7       |         6.6        |          28.5         |         50.6         |        4.7       |         8.7         |        77.8        |      46.2      |
 | GPT-3.5-turbo-1106 |  0.2 |  0.2 |        9.6       |       15.7      |       41.7       |         3.4        |          44.6         |         62.4         |        0.3       |         26.2        |        59.8        |      54.3      |
-| Zephyr 7B beta     |  0.2 |  0.5 |       58.3       |       26.5      |       44.0       |         1.7        |          24.6         |         34.0         |        7.6       |         25.4        |        54.1        |      41.6      |
+| Zephyr 7B beta     |  0.0 |  0.2 |       41.5       |       33.2      |       41.1       |         0.6        |          13.6         |         56.0         |        0.9       |         6.1         |        56.0        |      37.1      |
+
+<!-- | Zephyr 7B alpha    |  0.2 |  0.5 |       58.3       |       26.5      |       44.0       |         1.7        |          24.6         |         34.0         |        7.6       |         25.4        |        54.1        |      41.6      | -->
 
 ## ⚠️ Intended Use of Data
 The samples in FANToM should only be used for evaluation purposes.
